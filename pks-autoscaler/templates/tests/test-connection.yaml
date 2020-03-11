@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "pks-autoscaler.fullname" . }}-test-connection"
+  labels:
+{{ include "pks-autoscaler.labels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args:  ['{{ include "pks-autoscaler.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

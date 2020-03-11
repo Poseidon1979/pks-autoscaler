@@ -1,0 +1,3 @@
+By default there will be 2 embedded autoscalers:
+{{.Values.scaler1.name }} and {{.Values.scaler2.name }}. Enable any of them by setting "enabled" = true
+

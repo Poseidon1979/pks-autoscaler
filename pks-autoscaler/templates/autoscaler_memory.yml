@@ -1,0 +1,10 @@
+apiVersion: "pks.pivotal.io/v1"
+kind: AutoScaler
+metadata:
+  name: {{.Values.scaler2.name}}
+spec:
+  enabled: {{.Values.scaler2.enabled}}
+  index: {{.Values.scaler2.index}}
+  image: {{.Values.scaler2.image}}
+  upscaleon: {{.Values.scaler2.upscaleon}}
+  downscaleon: {{.Values.scaler2.downscaleon}}

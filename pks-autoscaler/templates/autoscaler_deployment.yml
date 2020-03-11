@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.deployment.name}}
+  labels:
+    app: autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autoscaler
+  template:
+    metadata:
+      labels:
+        app: autoscaler
+    spec:
+      containers:
+      - name: {{.Values.deployment.container.name}}
+        image: {{.Values.deployment.container.image}}
+        ports:
+        - containerPort: {{.Values.deployment.container.port}}
+      imagePullSecrets:
+      - name: {{.Values.secret.name}}
+      
