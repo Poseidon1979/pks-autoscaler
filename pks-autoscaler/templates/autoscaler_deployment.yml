@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+Version: apps/v1
 kind: Deployment
 metadata:
   name: {{.Values.deployment.name}}
@@ -19,6 +19,4 @@ spec:
         image: {{.Values.deployment.container.image}}
         ports:
         - containerPort: {{.Values.deployment.container.port}}
-      imagePullSecrets:
-      - name: {{.Values.secret.name}}
       
