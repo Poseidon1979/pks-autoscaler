@@ -12,7 +12,7 @@ scaler1:
 
 scaler2:
   name: "memoryscaler"
-  enabled: false
+  enabled: true
   index: "memory"
   image: "ccr.ccs.tencentyun.com/yanghaitao/autoscaler:v0.1"
   upscaleon: 80
